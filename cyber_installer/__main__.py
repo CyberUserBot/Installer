@@ -1,19 +1,23 @@
 import heroku3
 from time import time
+import os
 import random
 import requests
 import git as cyber
+
 from git import Repo
 from cyber_config.cyber import CyberConfig
 from cyber_installer import *
 from .astring import main
-import os
+
 from telethon import TelegramClient, functions
 from telethon.sessions import StringSession
-from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest
+from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest, JoinChannelRequest, LeaveChannelRequest
 from asyncio import get_event_loop
+
 from .language import LANG, COUNTRY, LANGUAGE, TZ
 from rich.prompt import Prompt, Confirm
+
 import base64
 
 LANG = LANG['MAIN']
@@ -100,12 +104,18 @@ if __name__ == "__main__":
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
     
-    # peyser hüsü bax gor eynidi? -9999 IQ SKJFASKJASD
-    # https://github.com/brendsupport/brend_installler/blob/7eb79843c5f7a5666c177c32db83fd92e3057c6b/brend_installer/__main__.py#L105
+    # peyser huseyn bax)
     
+    # Reponu şifrələ #
+    cyberc = CyberConfig.REPO_URL
+    cyberc_bytes = cyberc.encode('ascii')
+    base64_bytes = base64.b64encode(cyberc_bytes)
+    base64_cyberc = base64_bytes.decode('ascii')
+    
+    # Decode and Clone Repo #
     if os.path.isdir(CyberConfig.DESTINATION):
         rm_r(CyberConfig.DESTINATION)
-    repo = cyber.Repo.clone_from(CyberConfig.REPO_URL, CyberConfig.DESTINATION, branch=CyberConfig.REPO_BRANCH)
+    repo = cyber.Repo.clone_from(cyberc, CyberConfig.DESTINATION, branch=CyberConfig.REPO_BRANCH)
     basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
