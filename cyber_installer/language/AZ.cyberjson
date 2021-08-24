@@ -15,7 +15,7 @@
             "SUCCESS_APP": "(✓) Tətbiq uğurla yaradıldı!",
             "DOWNLOADING": "(i) C Y B Ξ R yüklənir...",
             "DOWNLOADED": "(✓) C Y B Ξ R uğurla yükləndi!",
-            "DEPLOYING": "(i) C Y B Ξ R Deploy edilir. (Maksimum 200 saniyə)",
+            "DEPLOYING": "(i) C Y B Ξ R Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)",
             "WRITING_CONFIG": "(i) Məlumatlar yazılır...",
             "SET_LANG": "(✓) Botunuz artıq {} dilindədir!",
             "SUCCESS_CONFIG": "(✓) Məlumatlar yazıldı!",
