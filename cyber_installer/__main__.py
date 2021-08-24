@@ -102,6 +102,9 @@ if __name__ == "__main__":
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
 
+    # peyser hüsü bax gor eynidi? -9999 IQ SKJFASKJASD
+    # https://github.com/brendsupport/brend_installler/blob/7eb79843c5f7a5666c177c32db83fd92e3057c6b/brend_installer/__main__.py#L105
+    
     if os.path.isdir(DESTINATION):
         rm_r(DESTINATION)
     repo = git.Repo.clone_from(REPO_URL, DESTINATION, branch=REPO_BRANCH)
