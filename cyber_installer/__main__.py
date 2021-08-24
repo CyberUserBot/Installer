@@ -2,8 +2,9 @@ import heroku3
 from time import time
 import random
 import requests
+import git as cyber
 from git import Repo
-import git
+from cyber_config.cyber import CyberConfig
 from cyber_installer import *
 from .astring import main
 import os
@@ -15,9 +16,6 @@ from .language import LANG, COUNTRY, LANGUAGE, TZ
 from rich.prompt import Prompt, Confirm
 import base64
 
-REPO_URL = "https://github.com/FaridDadashzade/CyberUserBot"
-REPO_BRANCH = "master"
-DESTINATION = "./cyberuserbot/"
 LANG = LANG['MAIN']
 
 def connect (api):
@@ -64,7 +62,7 @@ async def botlog (String, Api, Hash):
     await Client.start()
 
     KanalId = await Client(CreateChannelRequest(
-        title='C Y B Ξ R UserBot BotLog',
+        title='CYBER UserBot BotLog',
         about=LANG['AUTO_BOTLOG'],
         megagroup=True
     ))
@@ -101,15 +99,13 @@ if __name__ == "__main__":
     appname = createApp(heroku)
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
-
+    
     # peyser hüsü bax gor eynidi? -9999 IQ SKJFASKJASD
     # https://github.com/brendsupport/brend_installler/blob/7eb79843c5f7a5666c177c32db83fd92e3057c6b/brend_installer/__main__.py#L105
     
-    if os.path.isdir(DESTINATION):
-        rm_r(DESTINATION)
-    repo = git.Repo.clone_from(REPO_URL, DESTINATION, branch=REPO_BRANCH)
-#except git.CommandError:
-  #return False
+    if os.path.isdir(CyberConfig.DESTINATION):
+        rm_r(CyberConfig.DESTINATION)
+    repo = cyber.Repo.clone_from(CyberConfig.REPO_URL, CyberConfig.DESTINATION, branch=CyberConfig.REPO_BRANCH)
     basarili(LANG['DOWNLOADED'])
     onemli(LANG['DEPLOYING'])
     app = hgit(heroku, repo, appname)
@@ -119,6 +115,7 @@ if __name__ == "__main__":
     config['ANTI_SPAMBOT'] = 'False'
     config['ANTI_SPAMBOT_SHOUT'] = 'False'
     config['API_HASH'] = ahash
+    config['DEFAULT_NAME'] = 'Sahib'
     config['API_KEY'] = str(aid)
     config['BOTLOG'] = "False"
     config['ALIVE_LOGO'] = "https://telegra.ph/file/c3e75eccaeb7f56dfae89.mp4"
@@ -162,7 +159,7 @@ if __name__ == "__main__":
     if Sonra == True:
         BotLog = True
         Cevap = ""
-        while not Cevap == "4":
+        while not Cevap == "5":
             if Cevap == "1":
                 bilgi(LANG['OPENING_BOTLOG'])
 
@@ -178,12 +175,17 @@ if __name__ == "__main__":
                     basarili(LANG['SUCCESS_LOG'])
                 else:
                     hata(LANG['NEED_BOTLOG'])
-            elif Cevap == "3":
+            elif Cevap == "4":
                 config['PM_AUTO_BAN'] = "True"
                 basarili(LANG['PM_SUCCESS'])
+            elif Cevap == "3":
+                cyberad = str(soru(LANG['WHAT_IS_YOUR_NAME']))
+                config['DEFAULT_NAME'] = cyberad
+                basarili(LANG['SUCCESS_DEFAULTNAME'])
 
+         
             
-            bilgi(f"[1] {LANG['BOTLOG']}\n[2] {LANG['NO_LOG']}\n[3] {LANG['NO_PMAUTO']}\n[4] {LANG['CLOSE']}")
+            bilgi(f"\[1] {LANG['BOTLOG']}\n[2] {LANG['NO_LOG']}\n\[3] {LANG['NO_DEFAULTNAME']}\n\[4] {LANG['NO_PMAUTO']}\n\[5] {LANG['CLOSE']}")
             
-            Cevap = Prompt.ask(f"[bold yellow]{LANG['WHAT_YOU_WANT']}[/]", choices=["1", "2", "3", "4"], default="4")
+            Cevap = Prompt.ask(f"[bold yellow]{LANG['WHAT_YOU_WANT']}[/]", choices=["1", "2", "3", "4", "5"], default="5")
         basarili("Görüşənədək :)")
