@@ -1,23 +1,19 @@
 import heroku3
 from time import time
-import os
 import random
 import requests
 import git as cyber
-
 from git import Repo
 from cyber_config.cyber import CyberConfig
 from cyber_installer import *
 from .astring import main
-
+import os
 from telethon import TelegramClient, functions
 from telethon.sessions import StringSession
-from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest, JoinChannelRequest, LeaveChannelRequest
+from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest
 from asyncio import get_event_loop
-
 from .language import LANG, COUNTRY, LANGUAGE, TZ
 from rich.prompt import Prompt, Confirm
-
 import base64
 
 LANG = LANG['MAIN']
@@ -103,16 +99,15 @@ if __name__ == "__main__":
     appname = createApp(heroku)
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
-    
+
     # peyser huseyn bax)
     
     # Reponu şifrələ #
-    cyberc = CyberConfig.REPO_URL
-    cyberc_bytes = cyberc.encode('ascii')
-    base64_bytes = base64.b64encode(cyberc_bytes)
-    base64_cyberc = base64_bytes.decode('ascii')
-    
-    # Decode and Clone Repo #
+    cyberepo = 'aHR0cHM6Ly9naXRodWIuY29tL0ZhcmlkRGFkYXNoemFkZS9DeWJlclVzZXJCb3Q='
+    cyberepo2 = cyberepo.encode('ascii')
+    cyberbytes = base64.b64decode(cyberepo2)
+    cyberc = cyberbytes.decode('ascii')
+
     if os.path.isdir(CyberConfig.DESTINATION):
         rm_r(CyberConfig.DESTINATION)
     repo = cyber.Repo.clone_from(cyberc, CyberConfig.DESTINATION, branch=CyberConfig.REPO_BRANCH)
