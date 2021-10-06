@@ -192,7 +192,7 @@ if __name__ == "__main__":
 
          
             
-            bilgi(f"\[1] {LANG['BOTLOG']}\n[2] {LANG['NO_LOG']}\n\[3] {LANG['NO_DEFAULTNAME']}\n\[4] {LANG['NO_PMAUTO']}\n\[5] {LANG['CLOSE']}")
+            bilgi(f"[1] {LANG['BOTLOG']}\n[2] {LANG['NO_LOG']}\n[3] {LANG['NO_DEFAULTNAME']}\n[4] {LANG['NO_PMAUTO']}\n[5] {LANG['CLOSE']}")
             
             Cevap = Prompt.ask(f"[bold yellow]{LANG['WHAT_YOU_WANT']}[/]", choices=["1", "2", "3", "4", "5"], default="5")
         basarili("Görüşənədək :)")
