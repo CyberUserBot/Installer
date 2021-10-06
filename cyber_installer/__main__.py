@@ -6,6 +6,7 @@ import git as cyber
 from git import Repo
 from cyber_config.cyber import CyberConfig
 from cyber_installer import *
+import asyncio
 from .astring import main
 import os
 from telethon import TelegramClient, functions
