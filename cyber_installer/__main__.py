@@ -84,7 +84,6 @@ async def botlog (String, Api, Hash):
 
 if __name__ == "__main__":
     logo(LANGUAGE)
-    loop = asyncio.get_event_loop()
     api = soru(LANG['HEROKU_KEY'])
     bilgi(LANG['HEROKU_KEY_LOGIN'])
     heroku = connect(api)
@@ -161,6 +160,7 @@ if __name__ == "__main__":
     basarili(LANG['OPENED_DYNO'])
     basarili(LANG['SUCCESS_DEPLOY'])
     tamamlandi(time() - baslangic)
+    loop = asyncio.get_event_loop()
 
     Sonra = Confirm.ask(f"[bold yellow]{LANG['AFTERDEPLOY']}[/]", default=True)
     if Sonra == True:
