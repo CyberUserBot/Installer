@@ -163,7 +163,7 @@ if __name__ == "__main__":
     loop = asyncio.get_event_loop()
 
     Sonra = Confirm.ask(f"[bold yellow]{LANG['AFTERDEPLOY']}[/]", default=True)
-    if Sonra == True:
+    if Sonra is True:
         BotLog = True
         Cevap = ""
         while not Cevap == "5":
