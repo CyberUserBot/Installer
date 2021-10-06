@@ -47,10 +47,10 @@ class InteractiveTelegramClient(TelegramClient):
                 self_user = None
             except PhoneNumberInvalidError:
                 hata(LANG['INVALID_NUMBER'])
-                exit(1)
+                sys.exit(1)
             except ValueError:
                hata(LANG['INVALID_NUMBER'])
-               exit(1)
+               sys.exit(1)
 
             while self_user is None:
                code = soru(LANG['CODE'])
@@ -89,14 +89,14 @@ def main():
             rastgele = requests.post("https://my.telegram.org/auth/send_password", data={"phone": numara}).json()["random_hash"]
         except:
             hata(LANG['CANT_SEND_CODE'])
-            exit(1)
+            sys.exit(1)
       
         sifre = soru(LANG['WRITE_CODE_FROM_TG'])
         try:
             cookie = requests.post("https://my.telegram.org/auth/login", data={"phone": numara, "random_hash": rastgele, "password": sifre}).cookies.get_dict()
         except:
             hata(LANG['INVALID_CODE_MY'])
-            exit(1)
+            sys.exit(1)
         app = requests.post("https://my.telegram.org/apps", cookies=cookie).text
         soup = bs4.BeautifulSoup(app, features="html.parser")
 
@@ -105,11 +105,11 @@ def main():
             hashh = soup.find("input", {"name": "hash"}).get("value")
             app_title = soru("Proqramın qısa adı nə olsun? (Bunu boş buraxmayın!): ")
             if app_title == '':
-                app_title = choice(["cy", "cyb", "cybe", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
+                app_title = choice(["cyber", "cyb", "cybe", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
             
             app_shortname = soru("Proqramın qısa adı nə olsun? (Bunu boş buraxmayın!): ")
             if app_shortname == '':
-                app_shortname = choice(["cy", "cyb", "cybe", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
+                app_shortname = choice(["cyber", "cyb", "cybe", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
             
             AppInfo = {
                 "hash": hashh,
@@ -123,7 +123,7 @@ def main():
 
             if app == "ERROR":
                 hata("(!) Telegram avtomatik proqram açma prosesi bloklandı. Xahiş edirəm 1-2 saatdan sonra yenidən başladın.")
-                exit(1)
+                sys.exit(1)
 
             bilgi(LANG['CREATED'])
             bilgi(LANG['GETTING_API'])
@@ -155,7 +155,7 @@ def main():
             return client.session.save(), app_id, api_hash
         else:
             hata(LANG['ERROR'])
-            exit(1)
+            sys.exit(1)
     else:
         hata("(!) Bilinməyən seçim.")
-        exit(1)
+        sys.exit(1)
