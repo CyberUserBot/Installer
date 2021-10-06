@@ -16,6 +16,7 @@ from asyncio import get_event_loop
 from .language import LANG, COUNTRY, LANGUAGE, TZ
 from rich.prompt import Prompt, Confirm
 import base64
+import sys 
 
 LANG = LANG['MAIN']
 
@@ -25,7 +26,7 @@ def connect (api):
         heroku_conn.apps()
     except:
         hata(LANG['INVALID_KEY'])
-        exit(1)
+        sys.exit(1)
     return heroku_conn
 
 def createApp (connect):
@@ -34,7 +35,7 @@ def createApp (connect):
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
         hata(LANG['MOST_APP'])
-        exit(1)
+        sys.exit(1)
     return appname
 
 def hgit (connect, repo, appname):
@@ -155,7 +156,7 @@ if __name__ == "__main__":
         app.process_formation()["worker"].scale(1)
     except:
         hata(LANG['ERROR_DYNO'])
-        exit(1)
+        sys.exit(1)
 
     basarili(LANG['OPENED_DYNO'])
     basarili(LANG['SUCCESS_DEPLOY'])
