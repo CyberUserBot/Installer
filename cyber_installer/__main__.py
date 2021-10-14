@@ -145,6 +145,7 @@ if __name__ == "__main__":
     config['TZ_NUMBER'] = "1"
     config['UPSTREAM_REPO_URL'] = "https://github.com/FaridDadashzade/CyberUserBot"
     config['WARN_LIMIT'] = "3"
+    config['OPEN_WEATHER_MAP_APPID'] = "d1f00b521eb58c2a2721dfefacc66c3a"
     config['WARN_MODE'] = "gmute"
     config['LANGUAGE'] = LANGUAGE
 
