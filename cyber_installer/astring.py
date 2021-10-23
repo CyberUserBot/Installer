@@ -69,7 +69,7 @@ class InteractiveTelegramClient(TelegramClient):
                      hata(LANG['INVALID_2FA'])
 
 def main():
-    bilgi(f"\[1] {LANG['NEW']}\n\[2] {LANG['OLD']}")
+    bilgi(f"[1] {LANG['NEW']}\n[2] {LANG['OLD']}")
             
     Sonuc = Prompt.ask(f"[bold yellow]{LANG['WHICH']}[/]", choices=["1", "2"], default="1")
 
@@ -103,11 +103,11 @@ def main():
         if soup.title.string == "Create new application":
             bilgi(LANG['NEW_APP'])
             hashh = soup.find("input", {"name": "hash"}).get("value")
-            app_title = soru("Proqramın qısa adı nə olsun? (Bunu boş buraxmayın!): ")
+            app_title = soru("Proqramın adı nə olsun: ")
             if app_title == '':
                 app_title = choice(["cyber", "cyb", "cybe", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
             
-            app_shortname = soru("Proqramın qısa adı nə olsun? (Bunu boş buraxmayın!): ")
+            app_shortname = soru("Proqramın qısa adı nə olsun: ")
             if app_shortname == '':
                 app_shortname = choice(["cyber", "cyb", "cybe", "madelineproto", "telethon", "pyrogram"]) + choice(["", "-", "+", " "]) + choice(["user", "bot", "vue", "jsx", "python", "php"]) + choice([str(randint(10000, 99999)), ""])
             
@@ -134,7 +134,6 @@ def main():
 
             app_id = g_inputs[0].string
             api_hash = g_inputs[1].string
-            bilgi(LANG['INFOS'])
             onemli(f"{LANG['APIID']} {app_id}")
             onemli(f"{LANG['APIHASH']} {api_hash}")
             bilgi(LANG['STRING_GET'])
@@ -146,9 +145,6 @@ def main():
             g_inputs = soup.find_all("span", {"class": "form-control input-xlarge uneditable-input"})
             app_id = g_inputs[0].string
             api_hash = g_inputs[1].string
-            bilgi(LANG['INFOS'])
-            onemli(f"{LANG['APIID']} {app_id}")
-            onemli(f"{LANG['APIHASH']} {api_hash}")
             bilgi(LANG['STRING_GET'])
 
             client = InteractiveTelegramClient(StringSession(), app_id, api_hash, numara)
