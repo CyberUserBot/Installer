@@ -2,7 +2,8 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.live_render import LiveRender
 import sys
-import os, shutil
+import os
+import shutil
 
 console = Console()
 
@@ -16,9 +17,9 @@ def onemli (text):
    console.print(text, style="bold cyan")
 def soru (soru):
    return console.input(f"[bold yellow]{soru}[/]")
-def logo (dil = "None"):
+def logo (dil = "Yoxdur"):
    surum = str(sys.version_info[0]) + "." + str(sys.version_info[1])
-   console.print(Panel(f"[bold blue]CYBΞR USΞRBOT[/]\n\n[bold cyan]Versiya: [/][i]2.1[/]\n[bold cyan]Python: [/][i]{surum}[/]\n[bold cyan]Dil: [/][i]{dil}[/]"), justify="center")                         
+   console.print(Panel(f"[bold white]CYBΞR USΞRBOT[/]\n\n[bold blue]Versiya: [/][i]2.1[/]\n[bold red]Python: [/][i]{surum}[/]\n[bold green]Dil: [/][i]{dil}[/]"), justify="center")                         
 def tamamlandi (saniye):
    console.print(Panel(f"[bold green]Qurulum Tamamlandı!\n[i]Botu {round(saniye)} saniyə içində qurdunuz.[/]\n\n[bold green]Bir neçə dəqiqə sonra hər-hansı bir qrupa .alive yazaraq test edə bilərsiniz.[/]"), justify="center")                         
 
