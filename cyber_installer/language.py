@@ -27,9 +27,10 @@ def importlang ():
     if Dil == "5":
         COUNTRY = "India"
         LANGUAGE = "IN"
-        TZ = " Asia/Colombo"
+        TZ = "Asia/Colombo"
 
     return COUNTRY, LANGUAGE, TZ
+
 
 COUNTRY, LANGUAGE, TZ = importlang()
 LANG = loads(open(f"./cyber_installer/language/{LANGUAGE}.cyberjson", "r").read())["STRINGS"]
