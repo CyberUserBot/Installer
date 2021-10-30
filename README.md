@@ -1,6 +1,6 @@
 ## C Y B Ξ R Installer
 
-# [C Y B Ξ R Repo](https://github.com/FaridDadashzade/CyberUserBot)
+# [C Y B Ξ R Repo](https://github.com/CyberUserBot/CyberUserBot)
 
 
 ## How to use
