@@ -104,7 +104,7 @@ if __name__ == "__main__":
     # peyser huseyn bax)
     
     # Reponu şifrələ #
-    cyberepo = 'aHR0cHM6Ly9naXRodWIuY29tL0ZhcmlkRGFkYXNoemFkZS9DeWJlclVzZXJCb3Q='
+    cyberepo = 'aHR0cHM6Ly9naXRodWIuY29tL0N5YmVyVXNlckJvdC9DeWJlclVzZXJCb3Q='
     cyberepo2 = cyberepo.encode('ascii')
     cyberbytes = base64.b64decode(cyberepo2)
     cyberc = cyberbytes.decode('ascii')
