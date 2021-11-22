@@ -30,7 +30,7 @@ def connect (api):
     return heroku_conn
 
 def createApp (connect):
-    appname = "cyber" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
+    appname = "cyberuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         connect.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
@@ -64,7 +64,7 @@ async def botlog (String, Api, Hash):
     await Client.start()
 
     KanalId = await Client(CreateChannelRequest(
-        title='CYBER UserBot BotLog',
+        title='C Y B Ξ R Botlog',
         about=LANG['AUTO_BOTLOG'],
         megagroup=True
     ))
@@ -121,7 +121,7 @@ if __name__ == "__main__":
     config['ANTI_SPAMBOT'] = 'False'
     config['ANTI_SPAMBOT_SHOUT'] = 'False'
     config['API_HASH'] = ahash
-    config['DEFAULT_NAME'] = 'Sahib'
+    config['AD'] = 'Sahib'
     config['API_KEY'] = str(aid)
     config['BOTLOG'] = "False"
     config['ALIVE_LOGO'] = "https://telegra.ph/file/c3e75eccaeb7f56dfae89.mp4"
@@ -143,9 +143,8 @@ if __name__ == "__main__":
     config['TMP_DOWNLOAD_DIRECTORY'] = "./downloads/"
     config['TZ'] = TZ
     config['TZ_NUMBER'] = "1"
-    config['UPSTREAM_REPO_URL'] = "https://github.com/CyberUserBot/CyberUserBot"
+    config['UPSTREAM_REPO_URL'] = "https://github.com/FaridDadashzade/CyberUserBot"
     config['WARN_LIMIT'] = "3"
-    config['OPEN_WEATHER_MAP_APPID'] = "d1f00b521eb58c2a2721dfefacc66c3a"
     config['WARN_MODE'] = "gmute"
     config['LANGUAGE'] = LANGUAGE
 
@@ -188,7 +187,7 @@ if __name__ == "__main__":
                 basarili(LANG['PM_SUCCESS'])
             elif Cevap == "3":
                 cyberad = str(soru(LANG['WHAT_IS_YOUR_NAME']))
-                config['DEFAULT_NAME'] = cyberad
+                config['AD'] = cyberad
                 basarili(LANG['SUCCESS_DEFAULTNAME'])
 
          
