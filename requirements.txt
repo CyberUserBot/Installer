@@ -1,5 +1,5 @@
 heroku3
-git+https://github.com/SpEcHiDe/Telethon.git
+git+https://github.com/FaridDadashzade/Telethon.git
 bs4
 requests
 rich
