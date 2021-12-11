@@ -2,7 +2,7 @@
     "__CYBERJSON__": true,
     "LANGUAGE": "Azərbaycanca",
     "LANGCODE": "AZ",
-    "AUTHOR": "Luciferxz",
+    "AUTHOR": "FVREED",
     "STRINGS": {
         "MAIN": {
             "INVALID_KEY": "(!) API Key səhvdir.",
@@ -65,7 +65,9 @@
             "USING_TG": "(i) Hazır Açar Kodları istifadə edilir...",
             "PHONE_NUMBER_NEW": "(?) Telefon nömrənizi daxil edin: ",
             "CANT_SEND_CODE": "(!) Kod Göndərilmədi. Telefon nömrənizi yoxlayın.",
-            "WRITE_CODE_FROM_TG": "(?) Telegram-dan Gələn Kodu Yazın:",
+            "FLOODWAIT_ERROR": "Hesabınız bu proses üçün {} saniyə Telegram tərəfindən əngəllənib.",
+            "TRY_AGAIN_FW": "Botu yenidən qoşa bilmək üçün {} saniyə gözləməlisiniz.",
+            "WRITE_CODE_FROM_TG": "(?) Telegram-dan gələn kodu yazın:",
             "INVALID_CODE_MY": "(!) Böyük Ehtimal ki, Kodu Səhf Yazdınız. Xahiş edirik Scripti yenidən başladın.",
             "NEW_APP": "(i) Tətbiqiniz yoxdur. Yaradılır...",
             "CREATED": "(i) Tətbiq uğurla yaradıldı!",
@@ -74,7 +76,7 @@
             "APIID": "(i) API ID: ",
             "APIHASH": "(i) API HASH: ",
             "STRING_GET": "(i) String nəticəsi alınır...",
-            "SCRAPING": "(i) Artıq bir tətbiq yaratmısınız. API ID / HASH Məlumatları Çəkilir...",
+            "SCRAPING": "(i) Artıq bir tətbiq yaratmısınız. API ID/HASH Məlumatları Çəkilir...",
             "ERROR": "(!) Bir xəta baş verdi.",
             "NEW": "Yeni",
             "OLD": "Köhnə"
