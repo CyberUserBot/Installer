@@ -2,7 +2,7 @@
     "__CYBERJSON__": true,
     "LANGUAGE": "Türkçe",
     "LANGCODE": "TR",
-    "AUTHOR": "Lucifer",
+    "AUTHOR": "FVREED",
     "STRINGS": {
         "MAIN": {
             "INVALID_KEY": "(!) API Key yanlış.",
@@ -42,9 +42,6 @@
             "PM_SUCCESS": "(✓) Artıq şəxsi mesaj yazanlar üçün avtomatik mesaj göndərəcəm.",
             "SUCCESS_SUP": "(✓) Artık kanal ve gruba otomatik katılmayacak.",
             "WHAT_YOU_WANT": "Ne yapmak istiyorsunuz?",
-            "NO_DEFAULTNAME": "C Y B Ξ R-ə adınızı deyin.",
-            "WHAT_IS_YOUR_NAME": "Adınız nədir?",
-            "SUCCESS_DEFAULTNAME": "(✓) Sizi tanıdığıma məmnun oldum!",
             "CLOSE": "Çık",
             "YES": "Evet",
             "NO": "Hayır"
@@ -67,6 +64,9 @@
             "PHONE_NUMBER_NEW": "(?) Telefon Numaranız: ",
             "CANT_SEND_CODE": "(!) Kod Gönderilemedi. Telefon Numaranızı Kontrol Ediniz.",
             "WRITE_CODE_FROM_TG": "(?) Telegram'dan Gelen Kodu Yazınız: ",
+            "FLOODWAIT_ERROR": "Hesabınız bu işlem için {} saniye boyunca Telegram tarafından engellendi.",
+            "CODE_EXPIRED_ERROR": "Görünüşe göre başka biri için bot kuruyorsun.\n\nOndan kodu yeniden yönlendirmemesini ve ekran görüntüsü olarak atmasını isteyin.",
+            "TRY_AGAIN_FW": "Botu yeniden kurmak için {} saniye beklemeniz gerekir.",
             "INVALID_CODE_MY": "(!) Büyük İhtimal Kodu Yanlış Yazdınız. Lütfen Scripti Yeniden Başlatın.",
             "NEW_APP": "(i) Uygulamanız Yok. Oluşturuluyor...",
             "CREATED": "(i) Uygulama başarıyla oluşturuldu!",

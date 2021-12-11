@@ -1,3 +1,12 @@
+# Copyright (C) 2021 CyberUserBot
+# This file is a part of < https://github.com/CyberUserBot/Installer/ >
+# Please read the MIT license in
+# <https://www.github.com/CyberUserBot/Installer/blob/master/LICENSE/>.
+
+# Təkrar istifadəyə icazə verilmir.
+# Yeniden kullanıma izin verilmiyor.
+# Reuse is not allowed.
+
 from rich.console import Console
 from rich.panel import Panel
 from rich.live_render import LiveRender
@@ -19,7 +28,7 @@ def soru (soru):
    return console.input(f"[bold yellow]{soru}[/]")
 def logo (dil = "Yoxdur"):
    surum = str(sys.version_info[0]) + "." + str(sys.version_info[1])
-   console.print(Panel(f"[bold white]CYBΞR USΞRBOT[/]\n\n[bold blue]Versiya: [/][i]2.1[/]\n[bold red]Python: [/][i]{surum}[/]\n[bold green]Dil: [/][i]{dil}[/]"), justify="center")                         
+   console.print(Panel(f"[bold white]CYBΞR USΞRBOT[/]\n\n[bold blue]Versiya: [/][i]3.0[/]\n[bold red]Python: [/][i]{surum}[/]\n[bold green]Dil: [/][i]{dil}[/]"), justify="center")                         
 def tamamlandi (saniye):
    console.print(Panel(f"[bold green]Qurulum Tamamlandı!\n[i]Botu {round(saniye)} saniyə içində qurdunuz.[/]\n\n[bold green]Bir neçə dəqiqə sonra hər-hansı bir qrupa .alive yazaraq test edə bilərsiniz.[/]"), justify="center")                         
 

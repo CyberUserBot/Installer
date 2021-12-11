@@ -2,7 +2,7 @@
     "__CYBERJSON__": true,
     "LANGUAGE": "Uzbekcha",
     "LANGCODE": "UZ",
-    "AUTHOR": "Yusuf Usta",
+    "AUTHOR": "FVREED",
     "STRINGS": {
         "MAIN": {
             "INVALID_KEY": "(!) API kaliti noto'g'ri.",
@@ -42,9 +42,6 @@
             "NO_SUP": "Avtomatik qo'llab-quvvatlashni o'chirib qo'ying",
             "SUCCESS_SUP": "(✓) Endi u avtomatik ravishda kanalga yoki guruhga qo'shilmaydi.",
             "WHAT_YOU_WANT": "Siz nima qiilishni hohlaysiz?",
-            "NO_DEFAULTNAME": "C Y B Ξ R-ə adınızı deyin.",
-            "WHAT_IS_YOUR_NAME": "Adınız nədir?",
-            "SUCCESS_DEFAULTNAME": "(✓) Sizi tanıdığıma məmnun oldum!",
             "CLOSE": "Chiqish",
             "YES": "Ha",
             "NO": "Yoq"
@@ -66,6 +63,9 @@
             "PHONE_NUMBER_NEW": "(?) Sizning telefon raqamingiz: ",
             "CANT_SEND_CODE": "(!) Kodni yuborib bo'lmadi. Telefon raqamingizni tekshiring.",
             "WRITE_CODE_FROM_TG": "(?) Kodni Telegramdan yozing: ",
+            "FLOODWAIT_ERROR": "Ushbu amal uchun hisobingiz Telegram tomonidan {} soniyaga bloklangan.",
+            "CODE_EXPIRED_ERROR": "Siz boshqa birov uchun bot yaratayotganga o‘xshaysiz.\n\nUndan kodni qayta yo‘naltirmaslik va skrinshotni joylashtirmaslikni so‘rang.",
+            "TRY_AGAIN_FW": "Botni qayta oʻrnatish uchun {} soniya kutishingiz kerak.",
             "INVALID_CODE_MY": "(!) Kodni noto'g'ri yozganingiz uchun katta ehtimollik. Iltimos, skriptni qayta ishga tushiring.",
             "NEW_APP": "(i) Sizda hech qanday ilova yo'q. Yaratilmoqda...",
             "CREATED": "(i) Dastur muvaffaqiyatli yaratildi!",

@@ -1,11 +1,21 @@
+# Copyright (C) 2021 CyberUserBot
+# This file is a part of < https://github.com/CyberUserBot/Installer/ >
+# Please read the MIT license in
+# <https://www.github.com/CyberUserBot/Installer/blob/master/LICENSE/>.
+
+# Təkrar istifadəyə icazə verilmir.
+# Yeniden kullanıma izin verilmiyor.
+# Reuse is not allowed.
+
 import asyncio
 import os
 import sys
 import subprocess
 from cyber_installer import hata, bilgi, onemli, soru
+from asyncio import get_event_loop
 
 from telethon import TelegramClient, events, version
-from telethon.errors import SessionPasswordNeededError, PhoneCodeInvalidError, PasswordHashInvalidError, PhoneNumberInvalidError
+from telethon.errors import SessionPasswordNeededError, PhoneCodeInvalidError, PasswordHashInvalidError, PhoneNumberInvalidError, FloodWaitError, PhoneCodeExpiredError
 from telethon.network import ConnectionTcpAbridged
 from telethon.utils import get_display_name
 from telethon.sessions import StringSession
@@ -21,7 +31,6 @@ loop = asyncio.get_event_loop()
 LANG  = LANG['ASTRING']
 
 class InteractiveTelegramClient(TelegramClient):
-
     def __init__(self, session_user_id, api_id, api_hash,
                  telefon=None, proxy=None):
         super().__init__(
@@ -45,20 +54,33 @@ class InteractiveTelegramClient(TelegramClient):
             try:
                 loop.run_until_complete(self.sign_in(user_phone))
                 self_user = None
-            except PhoneNumberInvalidError:
+            except (PhoneNumberInvalidError, ValueError):
                 hata(LANG['INVALID_NUMBER'])
                 sys.exit(1)
-            except ValueError:
-               hata(LANG['INVALID_NUMBER'])
-               sys.exit(1)
-
+            except FloodWaitError as e:
+                hata(
+                    f"💤 {LANG['FLOODWAIT_ERROR'].format(e.seconds)}.\n\n\n\n🔁 {LANG['TRY_AGAIN_FW'].format(e.seconds)}!"
+                )      
+                sys.exit(1)
+            except PhoneCodeExpiredError as e:
+                hata(LANG['CODE_EXPIRED_ERROR'])
+                sys.exit(1)
             while self_user is None:
                code = soru(LANG['CODE'])
                try:
                   self_user =\
                      loop.run_until_complete(self.sign_in(code=code))
-               except PhoneCodeInvalidError:
-                  hata(LANG['INVALID_CODE'])
+               except (PhoneNumberInvalidError, ValueError):
+                  hata(LANG['INVALID_NUMBER'])
+                  sys.exit(1)
+               except FloodWaitError as e:
+                  hata(
+                      f"💤 {LANG['FLOODWAIT_ERROR'].format(e.seconds)}.\n\n\n\n🔁 {LANG['TRY_AGAIN_FW'].format(e.seconds)}!"
+                  )
+                  sys.exit(1)
+               except PhoneCodeExpiredError as e:
+                  hata(LANG['CODE_EXPIRED_ERROR'])
+                  sys.exit(1)
                except SessionPasswordNeededError:
                   bilgi(LANG['2FA'])
                   pw = soru(LANG['PASS'])

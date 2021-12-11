@@ -1,3 +1,12 @@
+# Copyright (C) 2021 CyberUserBot
+# This file is a part of < https://github.com/CyberUserBot/Installer/ >
+# Please read the MIT license in
+# <https://www.github.com/CyberUserBot/Installer/blob/master/LICENSE/>.
+
+# Təkrar istifadəyə icazə verilmir.
+# Yeniden kullanıma izin verilmiyor.
+# Reuse is not allowed.
+
 import heroku3
 from time import time
 import random
@@ -101,8 +110,6 @@ if __name__ == "__main__":
     basarili(LANG['SUCCESS_APP'])
     onemli(LANG['DOWNLOADING'])
 
-    # peyser huseyn bax)
-    
     # Reponu şifrələ #
     cyberepo = 'aHR0cHM6Ly9naXRodWIuY29tL0N5YmVyVXNlckJvdC9DeWJlclVzZXJCb3Q='
     cyberepo2 = cyberepo.encode('ascii')

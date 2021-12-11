@@ -42,9 +42,6 @@
             "NO_PMAUTO": "Şəxsi mesaj yazanlara avtomatik mesaj göndər",
             "PM_SUCCESS": "(✓) Artıq şəxsi mesaj yazanlar üçün avtomatik mesaj göndərəcəm.",
             "WHAT_YOU_WANT": "Nə etmək istəyirsiniz?",
-            "NO_DEFAULTNAME": "Adınızı ayarlayın.",
-            "WHAT_IS_YOUR_NAME": "Adınızı yazın: ",
-            "SUCCESS_DEFAULTNAME": "(✓) Sizi tanıdığıma məmnun oldum!",
             "CLOSE": "Çıx",
             "YES": "Bəli",
             "NO": "Xeyr"
