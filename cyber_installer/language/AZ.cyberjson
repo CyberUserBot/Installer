@@ -66,6 +66,7 @@
             "PHONE_NUMBER_NEW": "(?) Telefon nömrənizi daxil edin: ",
             "CANT_SEND_CODE": "(!) Kod Göndərilmədi. Telefon nömrənizi yoxlayın.",
             "FLOODWAIT_ERROR": "Hesabınız bu proses üçün {} saniyə Telegram tərəfindən əngəllənib.",
+            "CODE_EXPIRED_ERROR": "Deyəsən botu başqa biri üçün qurursan.\n\n🪐 Kodu yönləndirməməsini və ss atmasını istəyin.\n\n🔁 Artıq bu kod keçərsiz olduğundan, qurulum kodunu təkrar yapışdıraraq botu qura bilərsiniz.",
             "TRY_AGAIN_FW": "Botu yenidən qoşa bilmək üçün {} saniyə gözləməlisiniz.",
             "WRITE_CODE_FROM_TG": "(?) Telegram-dan gələn kodu yazın:",
             "INVALID_CODE_MY": "(!) Böyük Ehtimal ki, Kodu Səhf Yazdınız. Xahiş edirik Scripti yenidən başladın.",
