@@ -1,5 +1,5 @@
 heroku3
-telethon==1.25.0
+Telethon==1.25.2
 bs4
 requests
 rich
